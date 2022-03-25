@@ -11,6 +11,7 @@ pipeline {
                 sh 'pip3 install --user flask_sqlalchemy'
                 sh 'pip3 install --user flask_bcrypt'
                 sh 'pip3 install --user flask_login'
+                sh 'pip3 install --user flask_mail'
                 }
             }
         stage ('Test') {
@@ -18,7 +19,7 @@ pipeline {
                 sh 'python3 test_routes.py'
             }
             post{
-                always {juni 'test-reports/*.xml'}
+                always {junit 'test-reports/*.xml'}
             }
         }
     }
