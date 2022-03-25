@@ -12,6 +12,7 @@ pipeline {
                 sh 'pip3 install --user flask_bcrypt'
                 sh 'pip3 install --user flask_login'
                 sh 'pip3 install --user flask_mail'
+                sh 'pip3 install --user flask_wtf'
                 }
             }
         stage ('Test') {
