@@ -13,6 +13,7 @@ pipeline {
                 sh 'pip3 install --user flask_login'
                 sh 'pip3 install --user flask_mail'
                 sh 'pip3 install --user flask_wtf'
+                sh 'pip3 install --user itsdangerous==2.0.1'
                 }
             }
         stage ('Test') {
