@@ -6,7 +6,7 @@ pipeline {
     stages{
         stage('Build') {
             steps {
-                sh 'pip3 install --user flask'
+                sh 'pip3 install --user Flask==2.0.3'
                 sh 'pip3 install --user pytest'
                 sh 'pip3 install --user flask_sqlalchemy'
                 sh 'pip3 install --user flask_bcrypt'
