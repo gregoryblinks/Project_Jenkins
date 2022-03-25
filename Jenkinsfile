@@ -15,10 +15,10 @@ pipeline {
             steps {
                 //This sh step runs the Python command to compile your application
                 //into byte code files, which are placed into the sources workspace directory
-                sh 'python -m py_compile app.py'
+                sh 'python -m py_compile run.py'
                 //This stash step saves the Python source code and compiled byte code files from the sources
                 //workspace directory for use in later stages.
-                stash(name: 'compiled-results', includes: 'app/*.py*')
+                stash(name: 'compiled-results', includes: 'Flaskblog/*.py*')
             }
         }
 
