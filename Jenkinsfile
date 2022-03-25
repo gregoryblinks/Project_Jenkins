@@ -10,6 +10,7 @@ pipeline {
                 sh 'pip3 install --user pytest'
                 sh 'pip3 install --user flask_sqlalchemy'
                 sh 'pip3 install --user flask_bcrypt'
+                sh 'pip3 install --user flask_login'
                 }
             }
         stage ('Test') {
