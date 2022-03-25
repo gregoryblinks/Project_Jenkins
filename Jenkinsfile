@@ -20,7 +20,7 @@ pipeline {
         stage ('Test') {
             steps {
                 sh 'python3 test_routes.py'
-                sh 'python3 test_routes.py'            
+                sh 'python3 test_forms.py'            
             }
             post{
                 always {junit 'test-reports/*.xml'}
