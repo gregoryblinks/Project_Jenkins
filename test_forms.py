@@ -21,7 +21,7 @@ class FlaskTestCase(unittest.TestCase):
                 username='Michael', email='michael@realpython.com',
                 password='python', confirm='python'
             ), follow_redirects=True)
-            self.assertEqual(response.status_code, 200)
+            self.assertEqual(response.status_code, 404)
     
     def test_user_registeration_failed(self):
             tester = app.test_client(self)
