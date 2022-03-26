@@ -5,14 +5,6 @@ pipeline {
 
     stages{
 
-        stage ('Checkout Codebase'){
-            steps{
-                cleanWs()
-                checkout scm: [$class: 'GitSCM', branches: [name:'*/']],userRemoteConfigs:
-                [[url:'https://github.com/gregoryblinks/Project_Jenkins.git']]
-            }
-        }
-
         stage('Build') {
             steps {
                 sh 'pip3 install --user Flask==2.0.3'
@@ -34,6 +26,12 @@ pipeline {
             }
             post {
                 always {junit 'test-reports/*.xml'}
+            }
+        }
+
+        stage ('Deploy'){
+            steps{
+                sh 'python3 run.py'
             }
         }
     }
