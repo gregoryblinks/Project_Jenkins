@@ -28,12 +28,6 @@ pipeline {
                 always {junit 'test-reports/*.xml'}
             }
         }
-
-        stage ('Deploy'){
-            steps{
-                sh 'python3 run.py'
-            }
-        }
     }
 }
                 
