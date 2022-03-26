@@ -4,15 +4,6 @@ pipeline {
     agent any
 
     stages{
-
-        stage ('Checkout Codebase'){
-            steps{
-                cleanWs()
-                checkout scm: [$class: 'GitSCM', branches: [name:'*/']],userRemoteConfigs:
-                [[url:'https://github.com/gregoryblinks/Project_Jenkins.git']]
-            }
-        }
-
         stage('Build') {
             steps {
                 sh 'pip3 install --user Flask==2.0.3'
@@ -25,14 +16,14 @@ pipeline {
                 sh 'pip3 install --user itsdangerous==2.0.1'
                 sh 'pip3 install --user email_validator'
                 sh 'pip3 install --user pillow'
+                }
             }
-        }
         stage ('Test') {
             steps {
                 sh 'python3 test_routes.py'
                 sh 'python3 test_forms.py'            
             }
-            post {
+            post{
                 always {junit 'test-reports/*.xml'}
             }
         }
