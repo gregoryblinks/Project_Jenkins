@@ -12,6 +12,12 @@ pipeline {
             }
         }
 
+        stage('Build Image') {
+            steps{
+                sh 'sudo docker build -t flask_blog:v1 .' 
+            }
+        }
+
         stage('Build') {
             steps {
                 sh 'pip3 install --user Flask==2.0.3'
