@@ -14,7 +14,6 @@ pipeline {
 
         stage('Build Image') {
             steps{
-                sh 'apk add py3-pip'
                 sh ' docker build -t flaskblog:v1 .'
                 sh 'pwd'
                 sh 'docker-compose up' 
