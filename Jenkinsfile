@@ -5,6 +5,13 @@ pipeline {
 
     stages{
 
+        stage('Clone Repository'){
+            /* Cloning the repository to my workspace*/
+            steps {
+                checkout scm
+            }
+        }
+
         stage('Build') {
             steps {
                 sh 'pip3 install --user Flask==2.0.3'
