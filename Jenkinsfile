@@ -14,7 +14,7 @@ pipeline {
 
         stage('Build Image') {
             steps{
-                sh 'sudo docker build -S flask_blog:v1 .' 
+                sh 'docker build -t flask_blog:v1 .' 
             }
         }
 
