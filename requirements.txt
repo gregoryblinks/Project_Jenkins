@@ -1,7 +1,7 @@
 Flask==2.0.3
 pytest
-#flask_sqlalchemy
-#flask_bcrypt
+flask_sqlalchemy
+flask_bcrypt
 #flask_login
 #flask_mail
 #flask_wtf
