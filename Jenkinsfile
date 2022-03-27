@@ -20,7 +20,7 @@ pipeline {
 
         stage('Run Image') {
             steps{
-                sh 'sudo docker run -d --name flaskblog flaskblog:v1'
+                sh 'sudo docker run -d -p 5000:4000 --name flaskblog flaskblog:v1'
             }
         }
 
