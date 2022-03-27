@@ -15,7 +15,6 @@ pipeline {
         stage('Build Image') {
             steps{
                 sh ' docker build -t flaskblog:v1 .'
-                sh 'pwd'
                 sh 'docker-compose up' 
             }
         }
