@@ -18,24 +18,9 @@ pipeline {
             }
         }
 
-        stage('Build') {
-            steps {
-                sh 'pip3 install --user Flask==2.0.3'
-                sh 'pip3 install --user pytest'
-                sh 'pip3 install --user flask_sqlalchemy'
-                sh 'pip3 install --user flask_bcrypt'
-                sh 'pip3 install --user flask_login'
-                sh 'pip3 install --user flask_mail'
-                sh 'pip3 install --user flask_wtf'
-                sh 'pip3 install --user itsdangerous==2.0.1'
-                sh 'pip3 install --user email_validator'
-                sh 'pip3 install --user pillow'
-            }
-        }
-
         stage('Run Image') {
             steps{
-                sh 'sudo docker run -d -p 8000:5000 --name flaskblog flaskblog:v1'
+                sh 'sudo docker run -d --name flaskblog flaskblog:v1'
             }
         }
 
