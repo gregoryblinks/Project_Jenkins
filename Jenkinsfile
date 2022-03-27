@@ -14,6 +14,7 @@ pipeline {
 
         stage('Build Image') {
             steps{
+                sh 'pwd'
                 sh 'docker-compose up' 
             }
         }
