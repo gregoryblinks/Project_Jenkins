@@ -17,6 +17,7 @@ pipeline {
                 sh 'pip3 install --user itsdangerous==2.0.1'
                 sh 'pip3 install --user email_validator'
                 sh 'pip3 install --user pillow'
+                sh 'python3 run.py'
             }
         }
         stage ('Test') {
