@@ -32,6 +32,13 @@ pipeline {
                 sh 'pip3 install --user pillow'
             }
         }
+
+        stage('Run Image') {
+            steps{
+                sh ' docker run -d --name flaskblog flaskblog:v1'
+            }
+        }
+
         stage ('Test') {
             steps {
                 sh 'python3 test_routes.py'
