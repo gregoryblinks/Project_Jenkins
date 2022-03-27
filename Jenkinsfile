@@ -14,7 +14,7 @@ pipeline {
 
         stage('Build Image') {
             steps{
-                sh ' docker build -t flaskblog:v1 . Dockerfile.Dockerfile '
+                sh ' docker build -t flaskblog:v1 /var/lib/jenkins/workspace/Test'
                 sh 'pwd'
                 sh 'docker-compose up' 
             }
