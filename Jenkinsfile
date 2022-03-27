@@ -15,6 +15,8 @@ pipeline {
         stage('Build Image') {
             steps{
                 sh 'pwd'
+                sh 'cd /var/lib/jenkins/workspace'
+                sh 'pwd'
                 sh 'docker-compose up' 
             }
         }
