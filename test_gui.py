@@ -10,7 +10,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 options = EdgeOptions()
 options.use_chromium = True
 options.add_experimental_option("detach", True)
-driver = Edge(options=options, executable_path=r'C:\Users\ryanp\Downloads\edgedriver_win64\msedgedriver.exe')
+driver = Edge(options=options, executable_path=r'msedgedriver.exe')
 
 URL = 'http://127.0.0.1:5000/home'
 
@@ -92,14 +92,16 @@ def launch_check_account():
     driver.find_element_by_id('username').clear()
     driver.find_element_by_id('email').clear()
     driver.find_element_by_id('submit').click()
-
-
+    driver.find_element_by_class_name("invalid-feedback")
+    driver.find_element_by_link_text('Logout').click()
 
 def launch_create_new_post():
-    launch_login
-
-
-
+    launch_login()
+    driver.find_element_by_link_text('New Post').click()
+    driver.find_element_by_id('submit').click()
+    driver.find_element_by_class_name("invalid-feedback")
+    driver.find_element_by_id('title').send_keys('Test ending')
+    driver.find_element_by_id('content').send_keys('So far you have seen the movement of this GUI-Test')
 
 
 
@@ -112,6 +114,7 @@ launch_register_passwords_not_equal()
 launch_register_email_not_valid()
 launch_walkthrough_posts()
 launch_check_account()
+launch_create_new_post()
 driver.close()
 
 
