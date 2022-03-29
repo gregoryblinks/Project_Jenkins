@@ -37,7 +37,7 @@ pipeline {
 
         stage ('Run App') {
             steps {
-                sh 'pip install requirements.txt' 
+                sh 'pip install -r requirements.txt' 
             }
         }
     }
