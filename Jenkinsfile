@@ -38,7 +38,7 @@ pipeline {
         stage ('Run App') {
             steps {
                 sh 'pip install requirements.txt'
-                sh 'python3 run.py'
+                
             }
         }
     }
