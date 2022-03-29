@@ -33,6 +33,7 @@ pipeline {
             post {
                 always {junit 'test-reports/*.xml'}
             }
+        }
 
         stage ('Run App') {
             steps {
