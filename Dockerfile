@@ -13,7 +13,9 @@ RUN apk update \
     && pip install psycopg2 \
     && apk add jpeg-dev zlib-dev libjpeg \
     && pip install Pillow \
-    && apk del build-deps
+    && apk del build-deps \
+    && pip uninstall  Flask Jinja2 \
+    && pip install Flask Jinja2
 COPY requirements.txt requirements.txt
 RUN pip install -r requirements.txt
 EXPOSE 5000/tcp
