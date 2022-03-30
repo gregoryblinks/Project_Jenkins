@@ -13,7 +13,8 @@ RUN apk update \
     && pip install psycopg2 \
     && apk add jpeg-dev zlib-dev libjpeg \
     && pip install Pillow \
-    && apk del build-deps 
+    && apk del build-deps \
+    && pip install octoprint --force-reinstall --no-cache-dir
 COPY requirements.txt requirements.txt
 RUN pip install -r requirements.txt
 EXPOSE 5000/tcp
