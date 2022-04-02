@@ -9,6 +9,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 
 options = EdgeOptions()
 options.use_chromium = True
+options.headless = True
 options.add_experimental_option("detach", True)
 driver = Edge(options=options, executable_path=r'msedgedriver.exe')
 
