@@ -25,13 +25,14 @@ pipeline {
         stage ('Test') {
             steps {
                 sh 'python3 test_routes.py'
+                sh 'python3 test_gui.py'
             }
             post {
                 always {junit 'test-reports/*.xml'}
             }
         }
 
-        stage ('Run App Necesities') {
+        stage ('Run App Necessities') {
             steps {
                 sh 'pip install selenium' 
             }
