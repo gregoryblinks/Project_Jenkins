@@ -24,7 +24,6 @@ pipeline {
 
         stage ('Test') {
             steps {
-                sh 'pip install msedge-selenium-tools'
                 sh 'python3 test_routes.py'
                 sh 'python3 test_gui.py '
             }
