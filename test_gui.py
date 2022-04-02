@@ -11,7 +11,7 @@ options = EdgeOptions()
 options.use_chromium = True
 options.headless = True
 options.add_experimental_option("detach", True)
-driver = Edge(options=options, executable_path=r'msedgedriver.exe')
+driver = Edge(options=options, executable_path=r'msedgedriver')
 
 URL = 'http://127.0.0.1:5000/home'
 
