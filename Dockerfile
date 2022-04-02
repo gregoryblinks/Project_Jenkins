@@ -16,6 +16,6 @@ RUN apk update \
     && apk del build-deps 
 COPY requirements.txt requirements.txt
 RUN pip install -r requirements.txt
-EXPOSE 8000
+EXPOSE 5000
 COPY . .
 CMD ["python", "run.py" ]
