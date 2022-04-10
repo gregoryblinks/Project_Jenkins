@@ -19,7 +19,8 @@ pipeline {
         stage('Push Image auf Dockerhub') {
             steps{
                 sh 'sudo docker login -u ohwerhig -p Larrychan'
-                sh 'sudo docker push flaskblog:v1 '
+                sh 'sudo docker tag flaskblog:v1 ohwerhig/flaskblog'
+                sh 'sudo docker push ohwerhig/flaskblog'
             }
         }
 
