@@ -22,19 +22,18 @@ pipeline {
             }
         }
 
-        stage ('Test') {
+        stage ('Unittests') {
             steps {
                 sh 'python3 test_routes.py'
-                sh 'python3 test_gui.py '
             }
             post {
                 always {junit 'test-reports/*.xml'}
             }
         }
 
-        stage ('Run App Necessities') {
+        stage ('GUI-Test') {
             steps {
-                sh 'pip install selenium' 
+                sh 'echo This is where the GUI-Test was supposed to take place' 
             }
         }
     }
